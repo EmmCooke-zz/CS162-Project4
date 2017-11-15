@@ -13,5 +13,72 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Character Files">
+      <UniqueIdentifier>{169cee18-75c3-4ebd-8872-5983edb65e5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Character Files">
+      <UniqueIdentifier>{5383fce9-2c67-48b3-b5e0-e57b4fd4d00e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="validateInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Barbarian.cpp">
+      <Filter>Source Files\Character Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueMen.cpp">
+      <Filter>Source Files\Character Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\Character Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HarryPotter.cpp">
+      <Filter>Source Files\Character Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Medusa.cpp">
+      <Filter>Source Files\Character Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vampire.cpp">
+      <Filter>Source Files\Character Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FantasyGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Menu.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="validateInput.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Barbarian.hpp">
+      <Filter>Header Files\Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueMen.hpp">
+      <Filter>Header Files\Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.hpp">
+      <Filter>Header Files\Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HarryPotter.hpp">
+      <Filter>Header Files\Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Medusa.hpp">
+      <Filter>Header Files\Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vampire.hpp">
+      <Filter>Header Files\Character Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FantasyGame.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
