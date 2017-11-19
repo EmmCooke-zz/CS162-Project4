@@ -53,7 +53,7 @@ void BlueMen::reduceStrength(int damageIn)
 		setStrength(getStrength() - damageIn);
 		if (cummulativeDamage >= 4)
 		{
-			cout << "A Blue Man has died!" << endl;
+			//cout << "A Blue Man has died!" << endl;
 		}
 		// BlueMen's special ability is Mob
 		// If their strength is reduced by 4, they lose a die

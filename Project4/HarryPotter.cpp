@@ -53,8 +53,8 @@ void HarryPotter::reduceStrength(int damageIn)
 		{
 			if (hogwarts)
 			{
-				cout << "Harry has died, but his time is not up!";
-				cout << " He revives at twice the strength!" << endl;
+				//cout << "Harry has died, but his time is not up!";
+				//cout << " He revives at twice the strength!" << endl;
 				setStrength(20);
 				hogwarts = false;
 			}

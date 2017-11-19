@@ -58,7 +58,7 @@ void Vampire::reduceStrength(int damageIn)
 		}
 		else
 		{
-			cout << "Vampire uses Charm! He takes no damage!" << endl;
+			//cout << "Vampire uses Charm! He takes no damage!" << endl;
 		}
 	}
 }

@@ -20,6 +20,9 @@ public:
 	// Destructor
 	~FantasyGame();
 
+	//void fight(Character * fighter1, Character * fighter2);
+	int fight(Character * fighter1, Character * fighter2);
+
 	// Getters
 	Character * getFighter1() const { return fighter1; }
 	Character * getFighter2() const { return fighter2; }
@@ -30,7 +33,7 @@ public:
 
 	// Run the game function
 	void runGame();
-	int printHeroes(int heroNum);
+	int printHeroes();
 	void printStats(Character * attacker, int attackRoll,
 					Character * defender, int defendRoll);
 };

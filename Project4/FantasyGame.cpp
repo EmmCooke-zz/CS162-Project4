@@ -44,6 +44,121 @@ FantasyGame::~FantasyGame()
 {
 }
 
+///*************************************************
+//* Description: Function to get the two characters
+//* to fight.
+//*************************************************/
+//void FantasyGame::fight(Character * fighter1, Character * fighter2)
+//{
+//	int roundCounter = 1;
+//	bool nextRound = true;
+//
+//	int attackerRoll,
+//		defenderRoll;
+//
+//	while (fighter1->alive() && fighter2->alive() && nextRound)
+//	{
+//		string validateInput;
+//		cout << "Round " << roundCounter++ << endl << endl;
+//		// Fighter 1 attacks, fighter 2 defends
+//		attackerRoll = fighter1->attack();
+//		defenderRoll = fighter2->defend();
+//
+//		// First half of the round
+//		cout << fighter1->getName() << " attacks, " << fighter2->getName() << " defends." << endl;
+//		printStats(fighter1, attackerRoll, fighter2, defenderRoll);
+//
+//		// Fighter 2 attacks, fighter 1 defends
+//		attackerRoll = fighter2->attack();
+//		defenderRoll = fighter1->defend();
+//
+//		// Second half of the round
+//		cout << fighter2->getName() << " attacks, " << fighter1->getName() << " defends." << endl;
+//		printStats(fighter2, attackerRoll, fighter1, defenderRoll);
+//
+//		// If either of the fighters die, announce their deaths and end the game
+//		if (!fighter1->alive())
+//		{
+//			cout << fighter1->getName() << " has died!" << endl;
+//		}
+//		else if (!fighter2->alive())
+//		{
+//			cout << fighter2->getName() << " has died!" << endl;
+//		}
+//
+//		// Ask the user if they would like to continue to the next round
+//		if (fighter1->alive() && fighter2->alive())
+//		{
+//			do
+//			{
+//				cout << "Would you like to continue to the next round (y/n)? ";
+//				getline(cin, validateInput);
+//				if (validateInput.length() > 1 || (tolower(validateInput[0] != 'y') && tolower(validateInput[0] != 'n')))
+//				{
+//					cout << "Please enter either y or n." << endl;
+//				}
+//			} while (validateInput.length() > 1 || (tolower(validateInput[0] != 'y') && tolower(validateInput[0] != 'n')));
+//		}
+//		// Exits the game
+//		if (validateInput == "n")
+//		{
+//			nextRound = false;
+//		}
+//	}
+//}
+
+/*************************************************
+* Description: Function to get the two characters
+* to fight.
+*************************************************/
+int FantasyGame::fight(Character * fighter1, Character * fighter2)
+{
+	int roundCounter = 1;
+	//bool nextRound = true;
+
+	int attackerRoll,
+		defenderRoll;
+
+	while (fighter1->alive() && fighter2->alive())
+	{
+		string validateInput;
+		//cout << "Round " <<  << endl << endl;
+		roundCounter++;
+		// Fighter 1 attacks, fighter 2 defends
+		attackerRoll = fighter1->attack();
+		defenderRoll = fighter2->defend();
+
+		// First half of the round
+		//cout << fighter1->getName() << " attacks, " << fighter2->getName() << " defends." << endl;
+		printStats(fighter1, attackerRoll, fighter2, defenderRoll);
+
+		// Fighter 2 attacks, fighter 1 defends
+		attackerRoll = fighter2->attack();
+		defenderRoll = fighter1->defend();
+
+		// Second half of the round
+		//cout << fighter2->getName() << " attacks, " << fighter1->getName() << " defends." << endl;
+		printStats(fighter2, attackerRoll, fighter1, defenderRoll);
+
+		// If either of the fighters die, announce their deaths and end the game
+		if (!fighter1->alive())
+		{
+			if (!fighter2->alive())
+			{
+				return 0;
+			}
+			return 2;
+		}
+		else if (!fighter2->alive())
+		{
+			if (!fighter1->alive())
+			{
+				return 0;
+			}
+			return 1;
+		}
+	}
+}
 /*************************************************
 * Description: This function runs the game.
 *************************************************/
@@ -57,7 +172,7 @@ void FantasyGame::runGame()
 		cout << "-------------------------------" << endl;
 		for (int i = 0; i < 2; i++)
 		{
-			heroes[i] = printHeroes(i);	// Offers the heroes to the user
+			heroes[i] = printHeroes();	// Offers the heroes to the user
 		}
 		// Dynamically allocates the new heroes to Base class pointers
 		setFighter1(heroes[0]);
@@ -70,55 +185,7 @@ void FantasyGame::runGame()
 		int attackerRoll,
 			defenderRoll;
 		// Play the rounds until there is a winner or the user quits
-		while (fighter1->alive() && fighter2->alive() && nextRound)
-		{
-			string validateInput;
-			cout << "Round " << roundCounter++ << endl << endl;
-			// Fighter 1 attacks, fighter 2 defends
-			attackerRoll = fighter1->attack();
-			defenderRoll = fighter2->defend();
-
-			// First half of the round
-			cout << fighter1->getName() << " attacks, " << fighter2->getName() << " defends." << endl;
-			printStats(fighter1, attackerRoll, fighter2, defenderRoll);
-
-			// Fighter 2 attacks, fighter 1 defends
-			attackerRoll = fighter2->attack();
-			defenderRoll = fighter1->defend();
-
-			// Second half of the round
-			cout << fighter2->getName() << " attacks, " << fighter1->getName() << " defends." << endl;
-			printStats(fighter2, attackerRoll, fighter1, defenderRoll);
-
-			// If either of the fighters die, announce their deaths and end the game
-			if (!fighter1->alive())
-			{
-				cout << fighter1->getName() << " has died!" << endl;
-			}
-			else if (!fighter2->alive())
-			{
-				cout << fighter2->getName() << " has died!" << endl;
-			}
-
-			// Ask the user if they would like to continue to the next round
-			if (fighter1->alive() && fighter2->alive())
-			{
-				do
-				{
-					cout << "Would you like to continue to the next round (y/n)? ";
-					getline(cin, validateInput);
-					if (validateInput.length() > 1 || (tolower(validateInput[0] != 'y') && tolower(validateInput[0] != 'n')))
-					{
-						cout << "Please enter either y or n." << endl;
-					}
-				} while (validateInput.length() > 1 || (tolower(validateInput[0] != 'y') && tolower(validateInput[0] != 'n')));
-			}
-			// Exits the game
-			if (validateInput == "n")
-			{
-				nextRound = false;
-			}
-		}
+		fight(fighter1, fighter2);
 
 		// Check and see if the user would like to play again
 		string validateInput;
@@ -193,7 +260,7 @@ void FantasyGame::setFighter2(int fighterIn)
 * Description: This function prints the heroes
 * list and then returns which hero has been chosen.
 *************************************************/
-int FantasyGame::printHeroes(int heroNum)
+int FantasyGame::printHeroes()
 {
 	Menu heroMenu(5);
 	heroMenu.setOption(0, "Vampire");
@@ -227,16 +294,16 @@ int FantasyGame::printHeroes(int heroNum)
 void FantasyGame::printStats(Character* attacker, int attackRoll,
 							Character* defender, int defendRoll)
 {
-	cout << "--------------------------------" << endl;
+	/*cout << "--------------------------------" << endl;
 	cout << "Attacker         : " << attacker->getName() << endl;
 	cout << "Attacker Roll    : " << attackRoll << endl << endl;
 	cout << "Defender         : " << defender->getName() << endl;
 	cout << "Defender Armor   : " << defender->getArmor() << endl;
 	cout << "Defender Strength: " << defender->getStrength() << endl;
 	cout << "Defender Roll    : " << defendRoll << endl << endl;
-	cout << "Total Damage Inflicted: " << attackRoll - defendRoll << endl;
+	cout << "Total Damage Inflicted: " << attackRoll - defendRoll << endl;*/
 	// Inflict damage here
 	defender->reduceStrength(attackRoll - defendRoll);
-	cout << "Defenders New Strength: " << defender->getStrength() << endl;
-	cout << endl;
+	/*cout << "Defenders New Strength: " << defender->getStrength() << endl;
+	cout << endl;*/
 }

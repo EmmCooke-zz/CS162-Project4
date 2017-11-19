@@ -55,7 +55,7 @@ int Medusa::attack()
 		// 50 damage is enough to overpower anyone
 		if (attackRoll == 12)
 		{
-			cout << "Medusa uses Glare! It's super effective!" << endl;
+			//cout << "Medusa uses Glare! It's super effective!" << endl;
 			return 50;
 		}
 	}

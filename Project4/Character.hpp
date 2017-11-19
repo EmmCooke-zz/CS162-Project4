@@ -46,6 +46,7 @@ public:
 	void setNumDefenseDie(int numDefenseDieIn) { numDefenseDie = numDefenseDieIn; }
 	void setArmor(int armorIn) { armor = armorIn; }
 	void setStrength(int strengthIn) { strength = strengthIn; }
+	void setName(string nameIn) { name = nameIn; }
 
 	bool alive();
 

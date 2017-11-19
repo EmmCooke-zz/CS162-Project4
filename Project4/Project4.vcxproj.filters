@@ -51,6 +51,9 @@
     <ClCompile Include="FantasyGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FantasyTournament.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.hpp">
@@ -78,6 +81,9 @@
       <Filter>Header Files\Character Files</Filter>
     </ClInclude>
     <ClInclude Include="FantasyGame.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FantasyTournament.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
